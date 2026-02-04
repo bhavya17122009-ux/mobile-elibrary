@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College E-Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+
+    <nav>
+        <button onclick="showPage('student')">Student Issue</button>
+        <button onclick="showPage('admin')">Librarian View</button>
+    </nav>
+
+    <section id="studentPage" class="page">
+        <h1>Issue a Book</h1>
+        <div id="reader"></div>
+        <div class="form-group">
+            <p><strong>Scanned ID:</strong> <span id="studentID">None</span></p>
+            <input type="text" id="bookTitle" placeholder="Enter Book Name">
+            <button class="btn-primary" onclick="requestBook()">Request for Tomorrow</button>
+        </div>
+    </section>
+
+    <section id="adminPage" class="page" style="display:none;">
+        <h1>Next Day Collections</h1>
+        <table id="adminTable">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Book Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="issueList">
+                </tbody>
+        </table>
+        <button class="btn-danger" onclick="clearData()">Clear All Records</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
